@@ -5,11 +5,11 @@ const dbConnect = () => {
   mongoose.connect(
     DB_URI,
     { useNewUrlParser: true, useUnifiedTopology: true },
-    function (err) {
-      if (err) {
-        console.error("Error de conexión:", err);
+    (err, res) => {
+      if (!err) {
+        console.log("*** CONEXIÓN A LA DB CORRECTA ***");
       } else {
-        console.log("Conexión establecida correctamente.");
+        console.log("*** CONEXIÓN A LA DB INCORRECTA ***");
       }
     }
   );

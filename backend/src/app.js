@@ -7,6 +7,9 @@ const { PORT } = require("../config/envConfig");
 app.use(cors());
 app.use(epxress.json());
 
+
+app.use('/api/', require('./routes'))
+
 dbConnect();
 app.listen(PORT, () => {
   console.log("API lista por el puerto ", PORT);
